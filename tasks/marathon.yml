@@ -51,7 +51,7 @@
     env:
       HOME: "{{ airflow_home }}"
       AIRFLOW_HOME: "{{ airflow_home }}"
-      PYTHONPATH: "{{ airflow_python_libraries_path }}"
+#      PYTHONPATH: "{{ airflow_python_libraries_path }}"
     user: "{{ airflow_user }}"
     instances: 1
     cpus: '{{ airflow_scheduler_cpus }}'
@@ -88,7 +88,7 @@
     env:
       HOME: "{{ airflow_home }}"
       AIRFLOW_HOME: "{{ airflow_home }}"
-      PYTHONPATH: "{{ airflow_python_libraries_path }}"
+#      PYTHONPATH: "{{ airflow_python_libraries_path }}"
     user: "{{ airflow_user }}"
     instances: 1
     cpus: '{{ airflow_webserver_cpus }}'

@@ -134,7 +134,7 @@
   register: airflow_initdb_result
   environment:
     AIRFLOW_HOME: "{{ airflow_home }}"
-    PYTHONPATH: "{{ airflow_python_libraries_path }}"
+#    PYTHONPATH: "{{ airflow_python_libraries_path }}"
   become: true
   become_user: '{{ airflow_user }}'
   changed_when: "airflow_initdb_result.rc != 0 or airflow_initdb_result.stdout.find('Running upgrade') >= 0"
@@ -144,7 +144,7 @@
   register: airflow_upgradedb_result
   environment:
     AIRFLOW_HOME: "{{ airflow_home }}"
-    PYTHONPATH: "{{ airflow_python_libraries_path }}"
+#    PYTHONPATH: "{{ airflow_python_libraries_path }}"
   become: true
   become_user: '{{ airflow_user }}'
   changed_when: "airflow_upgradedb_result.rc != 0 or airflow_upgradedb_result.stdout.find('Running upgrade') >= 0"
@@ -162,7 +162,7 @@
   register: airflow_db_config_result
   environment:
     AIRFLOW_HOME: "{{ airflow_home }}"
-    PYTHONPATH: "{{ airflow_python_libraries_path }}"
+#    PYTHONPATH: "{{ airflow_python_libraries_path }}"
   become: true
   become_user: "{{ airflow_user }}"
   changed_when: "airflow_db_config_result.rc != 0 or airflow_db_config_result.stdout.find('Creating') >= 0"
