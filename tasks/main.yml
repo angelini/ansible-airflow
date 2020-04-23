@@ -80,7 +80,7 @@
   pip:
     name: "{{ airflow_pip_package_name }}=={{ airflow_version }}"
     executable: '{{ airflow_pip }}'
-    state: present
+    state: forcereinstall
 
 - name: Install additional Python packages
   pip:
