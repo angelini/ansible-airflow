@@ -69,6 +69,12 @@
     state: present
   with_flattened: "{{ airflow_plugins|map(attribute='required_pips')|list }}"
 
+- name: Force install SQLAlchemy==1.13.15
+  pip:
+    name: 'SQLAlchemy==1.13.15'
+    executable: '{{ airflow_pip }}'
+    state: forcereinstall
+
 - name: Uninstall old airflow package
   pip:
     name: 'airflow'
