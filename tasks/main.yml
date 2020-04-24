@@ -89,6 +89,12 @@
     state: present
   with_items: "{{ airflow_additional_pip_packages }}"
 
+- name: Force install SQLAlchemy==1.13.15
+  pip:
+    name: 'SQLAlchemy==1.13.15'
+    executable: '{{ airflow_pip }}'
+    state: forcereinstall
+
 - name: Fix Python path in Airflow scripts
   lineinfile:
     dest: "{{ airflow_bin_path }}"
